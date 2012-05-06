@@ -1,0 +1,63 @@
+<?php echo $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>faiga.de</title>
+  <link rel="shortcut icon" href="<?php $this->baseUrl(); ?>favicon.ico" type="image/x-icon" /> 
+  <link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl('/css/main.css');?>">
+</head>
+<body>
+<div id="main">
+<div id="login">
+<?php $auth = Zend_Auth::getInstance();
+if(!$auth->hasIdentity()) {?>
+	<form method="post" action="<?php echo $this->url(array('controller' => 'index','action' => 'login'));?>">
+	    <table>
+		    <tr>
+			    <th align="left"> Nutzer </th>
+			    <td> <input type="text" name="nutzer" /> </td>
+		    </tr>
+		    <tr>
+			    <th align="left"> Passwort </th>
+			    <td> <input type="password" name="pass" /> </td>
+		    </tr>
+		    <tr>
+			    <th> &nbsp; </th>
+			    <td> <input type="submit" name="login" value="Anmelden" /> </td>
+		    </tr>
+		    <tr>
+			    <th colspan="2"> <a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'register'));?>">registrieren</a> </th>
+		    </tr>
+	    </table>
+    </form>
+<?php } else {?>
+	<a href="<?php echo $this->url(array('controller' => 'index','action' => 'logout'));?>">abmelden</a>
+<?php }?>
+</div>
+<div id="menu">
+  <ul>
+  	<li>
+  		<a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'index'));?>">Home</a>
+  	</li>
+  	<?php if($auth->hasIdentity() ) {?>
+  		<li>
+  			<a href="<?php echo $this->url(array('controller' => 'book', 'action' => 'mybooks'));?>">meine B&uuml;cher</a>
+  		</li>
+  		<li>
+  			<a href="<?php echo $this->url(array('controller' => 'book', 'action' => 'addbook'));?>">neues Buch</a>
+  		</li>
+  		<li>
+  		<a href="<?php echo $this->url(array('controller' => 'user', 'action' => 'friends'));?>">meine Freunde</a>
+  		</li>
+  		<li>
+  		<a href="<?php echo $this->url(array('controller' => 'user', 'action' => 'find'));?>">finde Freunde</a>
+  		</li>
+  	<?php }?>
+  </ul>
+</div>
+<div id="content" >
+    <?php echo $this->layout()->content ?>
+</div>
+</div>
+</body>
+</html>

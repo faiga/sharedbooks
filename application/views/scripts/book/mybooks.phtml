@@ -1,0 +1,8 @@
+<h1>Meine B&uuml;cher</h1>
+
+<ul>
+<?php foreach($this->books as $key => $data) {
+	echo '<li> <a href="' . $this->url(array('controller' => 'book', 'action' => 'detail')) . 
+		'?id=' . $data['book']. '">' . $data['title'] .'</a></li>';
+}?>
+</ul>

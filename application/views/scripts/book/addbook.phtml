@@ -1,0 +1,16 @@
+<form method ="post" action="<?php echo $this->url();?>">
+	<table>
+		<tr>
+			<th align="left"> Titel </th>
+			<td> <select name="titel">
+				<option> Buch w&auml;hlen </option>
+				<?php foreach($this->books as $key => $data) {
+					echo '<option value="' . $data['id'] . '"> ' . $data['title'] .' ' . $data['author'] . '</option>';
+				}?>
+			</select> </td>
+		</tr>
+		<tr>
+			<th> &nbsp; </th>
+			<td> <input type="submit" name="save" value="Speichern" /> </td>
+		</tr>
+	</table>

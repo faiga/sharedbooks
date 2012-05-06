@@ -1,0 +1,33 @@
+@CHARSET "ISO-8859-1";
+body {
+	background: #003df5;
+}
+
+#main {
+	margin: 0px 100px 100px 200px;
+	background: #fff;
+	min-height: 600px;
+	min-width: 800px;
+	position: absolute;
+}
+
+#menu {
+	position: absolute;
+	width : 200px;
+	height : 50%;
+	margin-top: 100px;
+	background: #d60000;
+}
+
+#content {
+	margin-left: 200px;
+	height: 100%;
+	width : 80%;
+}
+
+#login {
+	margin-right: 100px;
+	margin-left: 80%;
+	vertical-align: right; 
+	width : 200px;
+}

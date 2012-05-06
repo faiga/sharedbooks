@@ -1,0 +1,38 @@
+<h1> Buch hinzuf&uuml;gen</h1>
+
+<form method ="post" action="<?php echo $this->url();?>">
+	<table>
+		<tr>
+			<th align="left"> Titel </th>
+			<td> <input type="text" name="titel" /> </td>
+		</tr>
+		<tr>
+			<th align="left"> Sammelband </th>
+			<td> <input type="checkbox" name="sammelband" /> </td>
+		</tr>
+		<tr>
+			<th align="left"> Band </th>
+			<td> <input type="text" name="band" /> </td>
+		</tr>
+		<tr>
+			<th align="left"> Autor </th>
+			<td> <input type="text" name="autor" /> </td>
+		</tr>
+		<tr>
+			<th align="left"> Sprache </th>
+			<td> <input type="text" name="sprache" /> </td>
+		</tr>
+		<tr>
+			<th align="left"> Seiten </th>
+			<td> <input type="text" name="seiten" /> </td>
+		</tr>
+		<tr>
+			<th align="left"> Kategorie </th>
+			<td> <input type="text" name="kategorie" /> </td>
+		</tr>
+		<tr>
+			<th> &nbsp; </th>
+			<td> <input type="submit" name="save" value="Speichern" /> </td>
+		</tr>
+	</table>
+</form>
